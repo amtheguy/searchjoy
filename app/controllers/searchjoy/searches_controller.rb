@@ -16,6 +16,10 @@ module Searchjoy
       if params[:sort] == "conversion_rate"
         @searches.sort_by! { |s| [s["conversion_rate"].to_f, s["query"]] }
       end
+      
+      if params[:sort] == "avg_results_count"
+        @searches.sort_by! { |s| [s["avg_results_count"].to_f, s["query"]] }
+      end
     end
 
     def overview
